@@ -68,6 +68,13 @@ static NSMutableDictionary* _managedObjectContexts = nil;
             NSPersistentStoreCoordinator *coordinator = [NSPersistentStoreCoordinator defaultCoordinator];
             context = [[NSManagedObjectContext alloc] init];
             [context setPersistentStoreCoordinator: coordinator];
+			if ([[NSThread currentThread] isMainThread]) {
+				[context setMergePolicy:NSErrorMergePolicy];
+			} else {
+				[context setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
+			}
+
+
             [defaultCenter addObserver:self
                               selector:@selector(threadWillExit:) 
                                   name:NSThreadWillExitNotification 
@@ -101,7 +108,7 @@ static NSMutableDictionary* _managedObjectContexts = nil;
 +(void)threadWillExit:(NSNotification*)notification;
 {
     @synchronized([self class]) {
-        NSLog(@"Will exit thread with local NSManagedObjectContext");
+        NSLog(@"Will remove local NSManagedObjectContext on thread exit");
         [self removeThreadLocalContext];
     }
 }
@@ -121,9 +128,55 @@ static NSMutableDictionary* _managedObjectContexts = nil;
 
 +(void)mergeChangesFromContextDidSaveNotification:(NSNotification*)notification;
 {
-    NSLog(@"Will merge changes to local NSManagedObjectContext: %@", notification);
+    NSDictionary* userInfo = [notification userInfo];
+    NSInteger insertCount = [[userInfo objectForKey:NSInsertedObjectsKey] count];
+    NSInteger updateCount = [[userInfo objectForKey:NSUpdatedObjectsKey] count];
+    NSInteger deleteCount = [[userInfo objectForKey:NSDeletedObjectsKey] count];
+    NSLog(@"Will merge changes to local NSManagedObjectContext (%d inserts, %d updates, %d deletes). ", insertCount, updateCount, deleteCount);
     NSManagedObjectContext* context = [self threadLocalContext];
 	[context mergeChangesFromContextDidSaveNotification:notification];
+}
+
+
+-(BOOL)isThreadLocalContext;
+{
+	NSArray* keys = [_managedObjectContexts allKeysForObject:self];
+    return [[NSManagedObjectContext threadKey] isEqual:[keys lastObject]];
+}
+
+-(BOOL)saveWithFailureOption:(NSManagedObjectContextCWSaveFailureOption)option error:(NSError**)error;
+{
+	if ([self hasChanges]) {
+        NSError* localError = nil;
+    	if (![self save:&localError]) {
+            if (error) {
+            	*error = localError;
+            }
+            if (option == NSManagedObjectContextCWSaveFailureOptionThreadDefault) {
+            	option = [NSThread isMainThread] ? NSManagedObjectContextCWSaveFailureOptionRollback : NSManagedObjectContextCWSaveFailureOptionReset;
+            }
+        	switch (option) {
+            	case NSManagedObjectContextCWSaveFailureOptionRollback:
+                    NSLog(@"Did rollback context for error: %@", localError);
+                    [self rollback];
+                    break;
+                case NSManagedObjectContextCWSaveFailureOptionReset:
+                    NSLog(@"Did reset context for error: %@", localError);
+                    [self reset];
+                    break;
+                case NSManagedObjectContextCWSaveFailureOptionRemove:
+                	if ([self isThreadLocalContext]) {
+                        NSLog(@"Did remove context for error: %@", localError);
+                    	[NSManagedObjectContext removeThreadLocalContext];
+                    } else {
+                    	NSLog(@"Could not remove context for error: %@\n%@ is not the thread local context.", localError, self);
+                    }
+                    break;
+            }
+            return NO;
+        }
+    }
+    return YES;
 }
 
 #pragma mark --- Managing objects

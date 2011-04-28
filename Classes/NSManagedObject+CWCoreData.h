@@ -41,6 +41,11 @@
 @interface NSManagedObject (CWCoreData)
 
 /*!
+ * @abstract Gett the thread local self for this managed object
+ */
+-(id)threadLocalSelf;
+
+/*!
  * @abstract Query if the managed object has a temporary object ID.
  */
 - (BOOL)hasTemporaryObjectID;

@@ -31,6 +31,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+typedef enum {
+    NSManagedObjectContextCWSaveFailureOptionNone,		// Do nothing on save error
+    NSManagedObjectContextCWSaveFailureOptionThreadDefault,   // Rollback on main thread, reset on background threads.
+    NSManagedObjectContextCWSaveFailureOptionRollback,  // Rollback context and objects on error
+    NSManagedObjectContextCWSaveFailureOptionReset,     // Reset context, invalidating objects on error
+    NSManagedObjectContextCWSaveFailureOptionRemove     // Remove context, invalidating objects on error
+} NSManagedObjectContextCWSaveFailureOption;
+
 /*!
  * @abstract Convinience category for accessing a default thread local NSManagedObjectContext.
  *
@@ -55,6 +63,14 @@
  * @abstract Explicitly remove this thread's local context.
  */
 +(void)removeThreadLocalContext;
+
+
+-(BOOL)isThreadLocalContext;
+
+/*!
+ * @abstract Call save:, 
+ */
+-(BOOL)saveWithFailureOption:(NSManagedObjectContextCWSaveFailureOption)option error:(NSError**)error;
 
 -(id)insertNewUniqueObjectForEntityForName:(NSString*)entityName withPredicate:(NSPredicate*)predicate;
 -(id)fetchUniqueObjectForEntityName:(NSString*)entityName withPredicate:(NSPredicate*)predicate;

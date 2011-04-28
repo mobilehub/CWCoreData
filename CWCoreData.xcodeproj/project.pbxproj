@@ -30,21 +30,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = A61A0067130963F30039330C /* CWFoundation.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libCWFoundation.a */;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = CWFoundation;
 		};
 		A6ED936313697B37002DCEE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A61A0067130963F30039330C /* CWFoundation.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = A6ED914F13694AD8002DCEE4 /* UnitTests.octest */;
+			remoteGlobalIDString = A6ED914F13694AD8002DCEE4;
 			remoteInfo = UnitTests;
 		};
 		A6ED936613697B5C002DCEE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A61A0067130963F30039330C /* CWFoundation.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* CWFoundation */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = CWFoundation;
 		};
 /* End PBXContainerItemProxy section */

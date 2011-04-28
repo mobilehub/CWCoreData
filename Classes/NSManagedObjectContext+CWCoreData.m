@@ -1,0 +1,194 @@
+//
+//  NSManagedObjectContext+CWAdditions.m
+//  CWCoreData
+//  Created by Fredrik Olsson 
+//
+//  Copyright (c) 2011, Jayway AB All rights reserved.
+//
+//  Redistribution and use in source and binary forms, with or without
+//  modification, are permitted provided that the following conditions are met:
+//     * Redistributions of source code must retain the above copyright
+//       notice, this list of conditions and the following disclaimer.
+//     * Redistributions in binary form must reproduce the above copyright
+//       notice, this list of conditions and the following disclaimer in the
+//       documentation and/or other materials provided with the distribution.
+//     * Neither the name of the Jayway nor the names of its contributors may 
+//       be used to endorse or promote products derived from this software 
+//       without specific prior written permission.
+//
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+//  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+//  DISCLAIMED. IN NO EVENT SHALL JAYWAY AB BE LIABLE FOR ANY DIRECT, INDIRECT, 
+//  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+//  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+//  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
+//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
+//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+//  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+
+#import "NSManagedObjectContext+CWCoreData.h"
+#import "NSPersistentStoreCoordinator+CWCoreData.h"
+#import "NSFetchRequest+CWCoreData.h"
+
+
+@implementation NSManagedObjectContext (CWCoreData)
+
+static NSMutableDictionary* _managedObjectContexts = nil;
+
++(void)load;
+{
+	_managedObjectContexts = [[NSMutableDictionary alloc] initWithCapacity:4];
+}
+
++ (NSValue*)threadKey;
+{
+	return [NSValue valueWithPointer:[NSThread currentThread]];
+}
+
++ (BOOL)hasThreadLocalContext;
+{
+	return [_managedObjectContexts objectForKey:[self threadKey]] != nil;    
+}
+
+/**
+ Returns the managed object context for the application.
+ If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
+ */
++ (NSManagedObjectContext *)threadLocalContext;
+{
+    NSManagedObjectContext* context = nil;
+    @synchronized([self class]) {
+        NSValue* threadKey = [self threadKey];
+        context = [_managedObjectContexts objectForKey:threadKey];
+        
+        if (context == nil) {
+            NSNotificationCenter* defaultCenter = [NSNotificationCenter defaultCenter];
+            NSPersistentStoreCoordinator *coordinator = [NSPersistentStoreCoordinator defaultCoordinator];
+            context = [[NSManagedObjectContext alloc] init];
+            [context setPersistentStoreCoordinator: coordinator];
+            [defaultCenter addObserver:self
+                              selector:@selector(threadWillExit:) 
+                                  name:NSThreadWillExitNotification 
+                                object:[NSThread currentThread]];
+            [_managedObjectContexts setObject:context forKey:threadKey];
+            [defaultCenter addObserver:self 
+                              selector:@selector(managedObjectContextDidSave:) 
+                                  name:NSManagedObjectContextDidSaveNotification 
+                                object:context];
+            [context release];
+            NSLog(@"Did create thread local NSManagedObjectContext");
+        }
+    }
+    return context;
+}
+
++(void)removeThreadLocalContext;
+{
+	if ([self hasThreadLocalContext]) {
+        NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
+        [notificationCenter removeObserver:self 
+                                      name:NSManagedObjectContextDidSaveNotification 
+                                    object:[self threadLocalContext]];
+        [_managedObjectContexts removeObjectForKey:[self threadKey]];
+        [notificationCenter removeObserver:self 
+                                      name:NSThreadWillExitNotification 
+                                    object:[NSThread currentThread]];
+    }
+}
+
++(void)threadWillExit:(NSNotification*)notification;
+{
+    @synchronized([self class]) {
+        NSLog(@"Will exit thread with local NSManagedObjectContext");
+        [self removeThreadLocalContext];
+    }
+}
+
++(void)managedObjectContextDidSave:(NSNotification*)notification;
+{
+	for (NSValue* threadKey in [_managedObjectContexts allKeys]) {
+		NSThread* thread = (NSThread*)[threadKey pointerValue];
+        if (thread != [NSThread currentThread]) {
+			[self performSelector:@selector(mergeChangesFromContextDidSaveNotification:) 
+                         onThread:thread 
+                       withObject:notification 
+                    waitUntilDone:NO];
+        }
+    }
+}
+
++(void)mergeChangesFromContextDidSaveNotification:(NSNotification*)notification;
+{
+    NSLog(@"Will merge changes to local NSManagedObjectContext: %@", notification);
+    NSManagedObjectContext* context = [self threadLocalContext];
+	[context mergeChangesFromContextDidSaveNotification:notification];
+}
+
+#pragma mark --- Managing objects
+
+-(id)insertNewUniqueObjectForEntityForName:(NSString*)entityName withPredicate:(NSPredicate*)predicate;
+{
+    id object = [self fetchUniqueObjectForEntityName:entityName withPredicate:predicate];
+    if (object == nil) {
+	    return [NSEntityDescription insertNewObjectForEntityForName:entityName
+                                             inManagedObjectContext:self];
+    }
+    return object;
+}
+
+-(id)fetchUniqueObjectForEntityName:(NSString*)entityName withPredicate:(NSPredicate*)predicate;
+{
+	NSArray* objects = [self objectsForEntityName:entityName withPredicate:predicate sortDescriptors:nil];
+	if (objects) {
+		switch ([objects count]) {
+            case 0:
+                break;
+            case 1:
+                return [objects lastObject];
+            default:
+                [NSException raise:NSInternalInconsistencyException
+                            format:@"%@ (%@) should be unique, but exist as %d objects", entityName, predicate, [objects count]];
+        }
+    }
+    return nil;
+}
+
+-(BOOL)deleteUniqueObjectForEntityName:(NSString*)entityName predicate:(NSPredicate*)predicate;
+{
+	id object = [self fetchUniqueObjectForEntityName:entityName withPredicate:predicate];
+	if (object != nil) {
+		[self deleteObject:object];
+		return YES;
+	}
+	return NO;
+}
+
+-(NSUInteger)objectCountForEntityName:(NSString*)entityName withPredicate:(NSPredicate*)predicate;
+{
+    NSFetchRequest* request = [NSFetchRequest requestForEntityName:entityName
+                                                     withPredicate:predicate
+                                                   sortDescriptors:nil];
+    NSError* error = nil;
+    NSUInteger count = [self countForFetchRequest:request error:&error];
+	if (error) {
+        NSLog(@"%@", error);
+    }
+    return count;
+}
+
+-(NSArray*)objectsForEntityName:(NSString*)entityName withPredicate:(NSPredicate*)predicate sortDescriptors:(NSArray*)sortDescriptors;
+{
+    NSFetchRequest* request = [NSFetchRequest requestForEntityName:entityName
+                                                     withPredicate:predicate
+                                                   sortDescriptors:sortDescriptors];
+    NSError* error = nil;
+    NSArray* objects = [self executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"%@", error);
+    }
+    return objects;
+}
+
+@end

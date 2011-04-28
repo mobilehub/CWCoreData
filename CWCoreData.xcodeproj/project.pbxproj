@@ -1,0 +1,345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A61A0036130962DD0039330C /* CWCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = A61A0029130962DD0039330C /* CWCoreData.h */; };
+		A61A0037130962DD0039330C /* NSEntityDescription+CWCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = A61A002A130962DD0039330C /* NSEntityDescription+CWCoreData.h */; };
+		A61A0038130962DD0039330C /* NSEntityDescription+CWCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = A61A002B130962DD0039330C /* NSEntityDescription+CWCoreData.m */; };
+		A61A0039130962DD0039330C /* NSFetchRequest+CWCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = A61A002C130962DD0039330C /* NSFetchRequest+CWCoreData.h */; };
+		A61A003A130962DD0039330C /* NSFetchRequest+CWCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = A61A002D130962DD0039330C /* NSFetchRequest+CWCoreData.m */; };
+		A61A003B130962DD0039330C /* NSManagedObject+CWCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = A61A002E130962DD0039330C /* NSManagedObject+CWCoreData.h */; };
+		A61A003C130962DD0039330C /* NSManagedObject+CWCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = A61A002F130962DD0039330C /* NSManagedObject+CWCoreData.m */; };
+		A61A003D130962DD0039330C /* NSManagedObjectContext+CWCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = A61A0030130962DD0039330C /* NSManagedObjectContext+CWCoreData.h */; };
+		A61A003E130962DD0039330C /* NSManagedObjectContext+CWCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = A61A0031130962DD0039330C /* NSManagedObjectContext+CWCoreData.m */; };
+		A61A003F130962DD0039330C /* NSManagedObjectModel+CWCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = A61A0032130962DD0039330C /* NSManagedObjectModel+CWCoreData.h */; };
+		A61A0040130962DD0039330C /* NSManagedObjectModel+CWCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = A61A0033130962DD0039330C /* NSManagedObjectModel+CWCoreData.m */; };
+		A61A0041130962DD0039330C /* NSPersistentStoreCoordinator+CWCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = A61A0034130962DD0039330C /* NSPersistentStoreCoordinator+CWCoreData.h */; };
+		A61A0042130962DD0039330C /* NSPersistentStoreCoordinator+CWCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = A61A0035130962DD0039330C /* NSPersistentStoreCoordinator+CWCoreData.m */; };
+		A61A0044130962ED0039330C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A61A0043130962ED0039330C /* CoreData.framework */; };
+		A6ED936513697B45002DCEE4 /* libCWFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED936213697B37002DCEE4 /* libCWFoundation.a */; settings = {ATTRIBUTES = (Weak, ); }; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6ED936113697B37002DCEE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A61A0067130963F30039330C /* CWFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libCWFoundation.a */;
+			remoteInfo = CWFoundation;
+		};
+		A6ED936313697B37002DCEE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A61A0067130963F30039330C /* CWFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A6ED914F13694AD8002DCEE4 /* UnitTests.octest */;
+			remoteInfo = UnitTests;
+		};
+		A6ED936613697B5C002DCEE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A61A0067130963F30039330C /* CWFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D /* CWFoundation */;
+			remoteInfo = CWFoundation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A61A0029130962DD0039330C /* CWCoreData.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = CWCoreData.h; path = Classes/CWCoreData.h; sourceTree = "<group>"; };
+		A61A002A130962DD0039330C /* NSEntityDescription+CWCoreData.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = "NSEntityDescription+CWCoreData.h"; path = "Classes/NSEntityDescription+CWCoreData.h"; sourceTree = "<group>"; };
+		A61A002B130962DD0039330C /* NSEntityDescription+CWCoreData.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; name = "NSEntityDescription+CWCoreData.m"; path = "Classes/NSEntityDescription+CWCoreData.m"; sourceTree = "<group>"; };
+		A61A002C130962DD0039330C /* NSFetchRequest+CWCoreData.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = "NSFetchRequest+CWCoreData.h"; path = "Classes/NSFetchRequest+CWCoreData.h"; sourceTree = "<group>"; };
+		A61A002D130962DD0039330C /* NSFetchRequest+CWCoreData.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; name = "NSFetchRequest+CWCoreData.m"; path = "Classes/NSFetchRequest+CWCoreData.m"; sourceTree = "<group>"; };
+		A61A002E130962DD0039330C /* NSManagedObject+CWCoreData.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+CWCoreData.h"; path = "Classes/NSManagedObject+CWCoreData.h"; sourceTree = "<group>"; };
+		A61A002F130962DD0039330C /* NSManagedObject+CWCoreData.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+CWCoreData.m"; path = "Classes/NSManagedObject+CWCoreData.m"; sourceTree = "<group>"; };
+		A61A0030130962DD0039330C /* NSManagedObjectContext+CWCoreData.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+CWCoreData.h"; path = "Classes/NSManagedObjectContext+CWCoreData.h"; sourceTree = "<group>"; };
+		A61A0031130962DD0039330C /* NSManagedObjectContext+CWCoreData.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+CWCoreData.m"; path = "Classes/NSManagedObjectContext+CWCoreData.m"; sourceTree = "<group>"; };
+		A61A0032130962DD0039330C /* NSManagedObjectModel+CWCoreData.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectModel+CWCoreData.h"; path = "Classes/NSManagedObjectModel+CWCoreData.h"; sourceTree = "<group>"; };
+		A61A0033130962DD0039330C /* NSManagedObjectModel+CWCoreData.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectModel+CWCoreData.m"; path = "Classes/NSManagedObjectModel+CWCoreData.m"; sourceTree = "<group>"; };
+		A61A0034130962DD0039330C /* NSPersistentStoreCoordinator+CWCoreData.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = "NSPersistentStoreCoordinator+CWCoreData.h"; path = "Classes/NSPersistentStoreCoordinator+CWCoreData.h"; sourceTree = "<group>"; };
+		A61A0035130962DD0039330C /* NSPersistentStoreCoordinator+CWCoreData.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; name = "NSPersistentStoreCoordinator+CWCoreData.m"; path = "Classes/NSPersistentStoreCoordinator+CWCoreData.m"; sourceTree = "<group>"; };
+		A61A0043130962ED0039330C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A61A0067130963F30039330C /* CWFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CWFoundation.xcodeproj; path = Components/CWFoundation/CWFoundation.xcodeproj; sourceTree = "<group>"; };
+		A61A00BA1309695D0039330C /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libCWCoreData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCWCoreData.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				A61A0044130962ED0039330C /* CoreData.framework in Frameworks */,
+				A6ED936513697B45002DCEE4 /* libCWFoundation.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libCWCoreData.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* CWCoreDataAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				A61A00BA1309695D0039330C /* README */,
+				A61A0067130963F30039330C /* CWFoundation.xcodeproj */,
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = CWCoreDataAdditions;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A61A0043130962ED0039330C /* CoreData.framework */,
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A61A0029130962DD0039330C /* CWCoreData.h */,
+				A61A002E130962DD0039330C /* NSManagedObject+CWCoreData.h */,
+				A61A002F130962DD0039330C /* NSManagedObject+CWCoreData.m */,
+				A61A0030130962DD0039330C /* NSManagedObjectContext+CWCoreData.h */,
+				A61A0031130962DD0039330C /* NSManagedObjectContext+CWCoreData.m */,
+				A61A002C130962DD0039330C /* NSFetchRequest+CWCoreData.h */,
+				A61A002D130962DD0039330C /* NSFetchRequest+CWCoreData.m */,
+				A61A002A130962DD0039330C /* NSEntityDescription+CWCoreData.h */,
+				A61A002B130962DD0039330C /* NSEntityDescription+CWCoreData.m */,
+				A61A0034130962DD0039330C /* NSPersistentStoreCoordinator+CWCoreData.h */,
+				A61A0035130962DD0039330C /* NSPersistentStoreCoordinator+CWCoreData.m */,
+				A61A0032130962DD0039330C /* NSManagedObjectModel+CWCoreData.h */,
+				A61A0033130962DD0039330C /* NSManagedObjectModel+CWCoreData.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		A6ED935D13697B37002DCEE4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6ED936213697B37002DCEE4 /* libCWFoundation.a */,
+				A6ED936413697B37002DCEE4 /* UnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A61A0036130962DD0039330C /* CWCoreData.h in Headers */,
+				A61A0037130962DD0039330C /* NSEntityDescription+CWCoreData.h in Headers */,
+				A61A0039130962DD0039330C /* NSFetchRequest+CWCoreData.h in Headers */,
+				A61A003B130962DD0039330C /* NSManagedObject+CWCoreData.h in Headers */,
+				A61A003D130962DD0039330C /* NSManagedObjectContext+CWCoreData.h in Headers */,
+				A61A003F130962DD0039330C /* NSManagedObjectModel+CWCoreData.h in Headers */,
+				A61A0041130962DD0039330C /* NSPersistentStoreCoordinator+CWCoreData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* CWCoreData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "CWCoreData" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6ED936713697B5C002DCEE4 /* PBXTargetDependency */,
+			);
+			name = CWCoreData;
+			productName = CWCoreDataAdditions;
+			productReference = D2AAC07E0554694100DB518D /* libCWCoreData.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "CWCoreData" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* CWCoreDataAdditions */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A6ED935D13697B37002DCEE4 /* Products */;
+					ProjectRef = A61A0067130963F30039330C /* CWFoundation.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* CWCoreData */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A6ED936213697B37002DCEE4 /* libCWFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCWFoundation.a;
+			remoteRef = A6ED936113697B37002DCEE4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A6ED936413697B37002DCEE4 /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = A6ED936313697B37002DCEE4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A61A0038130962DD0039330C /* NSEntityDescription+CWCoreData.m in Sources */,
+				A61A003A130962DD0039330C /* NSFetchRequest+CWCoreData.m in Sources */,
+				A61A003C130962DD0039330C /* NSManagedObject+CWCoreData.m in Sources */,
+				A61A003E130962DD0039330C /* NSManagedObjectContext+CWCoreData.m in Sources */,
+				A61A0040130962DD0039330C /* NSManagedObjectModel+CWCoreData.m in Sources */,
+				A61A0042130962DD0039330C /* NSPersistentStoreCoordinator+CWCoreData.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6ED936713697B5C002DCEE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CWFoundation;
+			targetProxy = A6ED936613697B5C002DCEE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/CWCoreData.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				HEADER_SEARCH_PATHS = "Components/**";
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = CWCoreData;
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/CWCoreData.dst;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				HEADER_SEARCH_PATHS = "Components/**";
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = CWCoreData;
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "CWCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "CWCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

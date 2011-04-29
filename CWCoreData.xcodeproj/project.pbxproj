@@ -26,6 +26,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A6A9753B136ABBD40065D9BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A61A0067130963F30039330C /* CWFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A6A971981369B2D80065D9BE;
+			remoteInfo = NetworkMonitorSampleApp;
+		};
+		A6A9753D136ABBD40065D9BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A61A0067130963F30039330C /* CWFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A6A971C41369B3C90065D9BE;
+			remoteInfo = XMLTranslatorSampleApp;
+		};
 		A6ED936113697B37002DCEE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A61A0067130963F30039330C /* CWFoundation.xcodeproj */;
@@ -138,6 +152,8 @@
 			children = (
 				A6ED936213697B37002DCEE4 /* libCWFoundation.a */,
 				A6ED936413697B37002DCEE4 /* UnitTests.octest */,
+				A6A9753C136ABBD40065D9BE /* NetworkMonitorSampleApp.app */,
+				A6A9753E136ABBD40065D9BE /* XMLTranslatorSampleApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,6 +228,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		A6A9753C136ABBD40065D9BE /* NetworkMonitorSampleApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = NetworkMonitorSampleApp.app;
+			remoteRef = A6A9753B136ABBD40065D9BE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A6A9753E136ABBD40065D9BE /* XMLTranslatorSampleApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = XMLTranslatorSampleApp.app;
+			remoteRef = A6A9753D136ABBD40065D9BE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		A6ED936213697B37002DCEE4 /* libCWFoundation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;

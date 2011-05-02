@@ -78,14 +78,8 @@
     
 	RSSItem* item = [_fetchedResultsController objectAtIndexPath:indexPath];
 	cell.textLabel.text = item.title;
-	
-	NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-	[formatter setLocale:[NSLocale currentLocale]];
-	[formatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss"];
-	NSString* dateString = [formatter stringFromDate:item.date];
-	[formatter release];
-    NSString* preamble = item.preamble;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"\t%@\n%@", dateString, preamble];
+
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"\t%@\n%@", [item localizedDate], item.preamble];
     
     return cell;
 }

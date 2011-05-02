@@ -40,6 +40,8 @@
 
 +(void)fetchRSSItemsInBackgroundFromURL:(NSURL*)url;
 
+-(NSString*)localizedDate;
+
 @end
 
 

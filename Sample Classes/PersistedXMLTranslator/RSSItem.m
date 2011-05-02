@@ -81,6 +81,18 @@
                            withObject:url];
 }
 
+-(NSString*)localizedDate;
+{
+    
+	static NSDateFormatter* formatter = nil;
+    if (formatter == nil) {
+        formatter = [[NSDateFormatter alloc] init];
+        [formatter setLocale:[NSLocale currentLocale]];
+        [formatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss"];
+    }
+	return [formatter stringFromDate:self.date];    
+}
+
 #pragma mark --- CWXMLTranslatorDelegate conformance
 
 +(id)xmlTranslator:(CWXMLTranslator *)translator didTranslateObject:(id)anObject fromXMLName:(NSString *)name toKey:(NSString *)key ontoObject:(id)parentObject;

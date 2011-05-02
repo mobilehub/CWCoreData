@@ -552,6 +552,7 @@
 				INFOPLIST_FILE = "PersistedXMLTranslator-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
+					"-all_load",
 					"-framework",
 					Foundation,
 					"-framework",

@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A61084BC136EE13700D42782 /* libCWFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED936213697B37002DCEE4 /* libCWFoundation.a */; };
+		A61084BD136EE13A00D42782 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A61084A5136EE0F700D42782 /* main.m */; };
+		A61084BE136EE13B00D42782 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A61084A6136EE0F700D42782 /* MainWindow.xib */; };
+		A61084BF136EE13C00D42782 /* RSSFeed.xmltranslation in Resources */ = {isa = PBXBuildFile; fileRef = A61084A7136EE0F700D42782 /* RSSFeed.xmltranslation */; };
+		A61084C0136EE13D00D42782 /* RSSFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61084A9136EE0F700D42782 /* RSSFeedTableViewController.m */; };
+		A61084C1136EE13D00D42782 /* SampleAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A61084AB136EE0F700D42782 /* SampleAppAppDelegate.m */; };
+		A61084C7136EE19800D42782 /* libCWCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libCWCoreData.a */; };
+		A61084C8136EE19800D42782 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A61A0043130962ED0039330C /* CoreData.framework */; };
+		A61084C9136EE19800D42782 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		A61084CB136EE19800D42782 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A61084CA136EE19800D42782 /* UIKit.framework */; };
+		A6108530136EE1F900D42782 /* RSSItem.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = A610852F136EE1F900D42782 /* RSSItem.xcdatamodel */; };
+		A6108533136EE2F800D42782 /* RSSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6108532136EE2F800D42782 /* RSSItem.m */; };
 		A61A0036130962DD0039330C /* CWCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = A61A0029130962DD0039330C /* CWCoreData.h */; };
 		A61A0037130962DD0039330C /* NSEntityDescription+CWCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = A61A002A130962DD0039330C /* NSEntityDescription+CWCoreData.h */; };
 		A61A0038130962DD0039330C /* NSEntityDescription+CWCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = A61A002B130962DD0039330C /* NSEntityDescription+CWCoreData.m */; };
@@ -26,6 +38,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A6108499136EE0DE00D42782 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A61A0067130963F30039330C /* CWFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A6B254EE136BF9E700D5F57F;
+			remoteInfo = CWNetworkMonitor;
+		};
+		A61084C3136EE17E00D42782 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A61A0067130963F30039330C /* CWFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = CWFoundation;
+		};
+		A61084C5136EE18400D42782 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = CWCoreData;
+		};
 		A6A9753B136ABBD40065D9BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A61A0067130963F30039330C /* CWFoundation.xcodeproj */;
@@ -64,6 +97,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A61084A5136EE0F700D42782 /* main.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A61084A6136EE0F700D42782 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		A61084A7136EE0F700D42782 /* RSSFeed.xmltranslation */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = text; path = RSSFeed.xmltranslation; sourceTree = "<group>"; };
+		A61084A8136EE0F700D42782 /* RSSFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; path = RSSFeedTableViewController.h; sourceTree = "<group>"; };
+		A61084A9136EE0F700D42782 /* RSSFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; path = RSSFeedTableViewController.m; sourceTree = "<group>"; };
+		A61084AA136EE0F700D42782 /* SampleAppAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; path = SampleAppAppDelegate.h; sourceTree = "<group>"; };
+		A61084AB136EE0F700D42782 /* SampleAppAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; path = SampleAppAppDelegate.m; sourceTree = "<group>"; };
+		A61084AC136EE0F700D42782 /* PersistedXMLTranslator-Info.plist */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = text.plist.xml; path = "PersistedXMLTranslator-Info.plist"; sourceTree = "<group>"; };
+		A61084B6136EE11800D42782 /* PersistedXMLTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersistedXMLTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A61084CA136EE19800D42782 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A610852F136EE1F900D42782 /* RSSItem.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = RSSItem.xcdatamodel; sourceTree = "<group>"; };
+		A6108531136EE2F800D42782 /* RSSItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSItem.h; sourceTree = "<group>"; };
+		A6108532136EE2F800D42782 /* RSSItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSItem.m; sourceTree = "<group>"; };
 		A61A0029130962DD0039330C /* CWCoreData.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = CWCoreData.h; path = Classes/CWCoreData.h; sourceTree = "<group>"; };
 		A61A002A130962DD0039330C /* NSEntityDescription+CWCoreData.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = "NSEntityDescription+CWCoreData.h"; path = "Classes/NSEntityDescription+CWCoreData.h"; sourceTree = "<group>"; };
 		A61A002B130962DD0039330C /* NSEntityDescription+CWCoreData.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; name = "NSEntityDescription+CWCoreData.m"; path = "Classes/NSEntityDescription+CWCoreData.m"; sourceTree = "<group>"; };
@@ -85,6 +131,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A61084B4136EE11800D42782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A61084BC136EE13700D42782 /* libCWFoundation.a in Frameworks */,
+				A61084C7136EE19800D42782 /* libCWCoreData.a in Frameworks */,
+				A61084C8136EE19800D42782 /* CoreData.framework in Frameworks */,
+				A61084C9136EE19800D42782 /* Foundation.framework in Frameworks */,
+				A61084CB136EE19800D42782 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2AAC07C0554694100DB518D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				D2AAC07E0554694100DB518D /* libCWCoreData.a */,
+				A61084B6136EE11800D42782 /* PersistedXMLTranslator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +171,7 @@
 				A61A00BA1309695D0039330C /* README */,
 				A61A0067130963F30039330C /* CWFoundation.xcodeproj */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
+				A61084A3136EE0F700D42782 /* Sample Classes */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
@@ -123,6 +183,7 @@
 			children = (
 				A61A0043130962ED0039330C /* CoreData.framework */,
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+				A61084CA136EE19800D42782 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,10 +208,53 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		A61084A3136EE0F700D42782 /* Sample Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A61084A4136EE0F700D42782 /* PersistedXMLTranslator */,
+			);
+			path = "Sample Classes";
+			sourceTree = "<group>";
+		};
+		A61084A4136EE0F700D42782 /* PersistedXMLTranslator */ = {
+			isa = PBXGroup;
+			children = (
+				A61085DF136EEBD900D42782 /* Model */,
+				A61085E0136EEBDF00D42782 /* Controller */,
+				A61084A5136EE0F700D42782 /* main.m */,
+				A61084A6136EE0F700D42782 /* MainWindow.xib */,
+				A61084AC136EE0F700D42782 /* PersistedXMLTranslator-Info.plist */,
+			);
+			path = PersistedXMLTranslator;
+			sourceTree = "<group>";
+		};
+		A61085DF136EEBD900D42782 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A610852F136EE1F900D42782 /* RSSItem.xcdatamodel */,
+				A6108531136EE2F800D42782 /* RSSItem.h */,
+				A6108532136EE2F800D42782 /* RSSItem.m */,
+				A61084A7136EE0F700D42782 /* RSSFeed.xmltranslation */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A61085E0136EEBDF00D42782 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A61084A8136EE0F700D42782 /* RSSFeedTableViewController.h */,
+				A61084A9136EE0F700D42782 /* RSSFeedTableViewController.m */,
+				A61084AA136EE0F700D42782 /* SampleAppAppDelegate.h */,
+				A61084AB136EE0F700D42782 /* SampleAppAppDelegate.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		A6ED935D13697B37002DCEE4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				A6ED936213697B37002DCEE4 /* libCWFoundation.a */,
+				A610849A136EE0DE00D42782 /* libCWNetworkMonitor.a */,
 				A6ED936413697B37002DCEE4 /* UnitTests.octest */,
 				A6A9753C136ABBD40065D9BE /* NetworkMonitorSampleApp.app */,
 				A6A9753E136ABBD40065D9BE /* XMLTranslatorSampleApp.app */,
@@ -178,6 +282,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		A61084B5136EE11800D42782 /* PersistedXMLTranslator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A61084BB136EE11900D42782 /* Build configuration list for PBXNativeTarget "PersistedXMLTranslator" */;
+			buildPhases = (
+				A61084B2136EE11800D42782 /* Resources */,
+				A61084B3136EE11800D42782 /* Sources */,
+				A61084B4136EE11800D42782 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A61084C4136EE17E00D42782 /* PBXTargetDependency */,
+				A61084C6136EE18400D42782 /* PBXTargetDependency */,
+			);
+			name = PersistedXMLTranslator;
+			productName = PersistedXMLTranslator;
+			productReference = A61084B6136EE11800D42782 /* PersistedXMLTranslator.app */;
+			productType = "com.apple.product-type.application";
+		};
 		D2AAC07D0554694100DB518D /* CWCoreData */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "CWCoreData" */;
@@ -223,11 +346,19 @@
 			projectRoot = "";
 			targets = (
 				D2AAC07D0554694100DB518D /* CWCoreData */,
+				A61084B5136EE11800D42782 /* PersistedXMLTranslator */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		A610849A136EE0DE00D42782 /* libCWNetworkMonitor.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCWNetworkMonitor.a;
+			remoteRef = A6108499136EE0DE00D42782 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		A6A9753C136ABBD40065D9BE /* NetworkMonitorSampleApp.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
@@ -258,7 +389,31 @@
 		};
 /* End PBXReferenceProxy section */
 
+/* Begin PBXResourcesBuildPhase section */
+		A61084B2136EE11800D42782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A61084BE136EE13B00D42782 /* MainWindow.xib in Resources */,
+				A61084BF136EE13C00D42782 /* RSSFeed.xmltranslation in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		A61084B3136EE11800D42782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A61084BD136EE13A00D42782 /* main.m in Sources */,
+				A61084C0136EE13D00D42782 /* RSSFeedTableViewController.m in Sources */,
+				A61084C1136EE13D00D42782 /* SampleAppAppDelegate.m in Sources */,
+				A6108530136EE1F900D42782 /* RSSItem.xcdatamodel in Sources */,
+				A6108533136EE2F800D42782 /* RSSItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2AAC07B0554694100DB518D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,6 +430,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A61084C4136EE17E00D42782 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CWFoundation;
+			targetProxy = A61084C3136EE17E00D42782 /* PBXContainerItemProxy */;
+		};
+		A61084C6136EE18400D42782 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* CWCoreData */;
+			targetProxy = A61084C5136EE18400D42782 /* PBXContainerItemProxy */;
+		};
 		A6ED936713697B5C002DCEE4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CWFoundation;
@@ -329,6 +494,7 @@
 				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "Components/**";
 			};
 			name = Debug;
 		};
@@ -345,6 +511,56 @@
 				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		A61084B9136EE11900D42782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "Sample Classes/PersistedXMLTranslator/PersistedXMLTranslator-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = PersistedXMLTranslator;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A61084BA136EE11900D42782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "PersistedXMLTranslator-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = PersistedXMLTranslator;
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -365,6 +581,15 @@
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
 				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A61084BB136EE11900D42782 /* Build configuration list for PBXNativeTarget "PersistedXMLTranslator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A61084B9136EE11900D42782 /* Debug */,
+				A61084BA136EE11900D42782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

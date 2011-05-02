@@ -1,0 +1,9 @@
+# Only act on contents inside the channel tag.
+channel -> {
+	item +> @root : NSMutableDictionary {
+		title >> title;
+    	link >> URL : NSURL;
+    	description >> preamble;
+		pubDate >> date : NSDate;
+	}
+}

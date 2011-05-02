@@ -30,6 +30,14 @@ You add this project as a sub project in Xcode like this:
 6. Add -all_load to other linker flags.
 
 
+The target PersistedXMLTranslator contains a modified version of the
+XMLTranslation sample app from CWFoundation. This version:
+* Use RSSItem, a NSManagedObject subclass, for RSS items.
+* Fetches RSS items to a second managed object context on a background thread.
+* Fetch logic is moved into the model layer, using Sync-Async Pair pattern.
+* Use a NSFetchedResultsController to back a table view.
+
+
 Functionality
 =============
 
